@@ -2,7 +2,7 @@
 import CareScale from './CareScale'
 import '../styles/PlantItem.css'
 
-const PlantItem = ({ id, cover, name, water, light })  => {
+const PlantItem = ({ id, cover, name, water, light, price })  => {
 
 	// const quantite = () =>{
 	// 	if(water === 1){
@@ -24,9 +24,13 @@ const PlantItem = ({ id, cover, name, water, light })  => {
 	// }
     
 	return (
-		<li key={id} className='lmj-plant-item' >
-			<img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} />
-			{name}
+		<li key={id} className='box border-box border-5 border-blue-700  w-96 ' >
+			<img className='w-96 h-80' src={cover} alt={`${name} cover`} />
+			<div className='flex flex-row gap-72 '>
+				<div>{name}</div>
+				<div className='text-red-600'>{price}$</div>
+			</div>
+			
 			<div>
 				<CareScale careType='water' scaleValue={water}  />
 				<CareScale careType='light' scaleValue={light} />

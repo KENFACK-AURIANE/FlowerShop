@@ -10,7 +10,7 @@ const Categories = ({categ, updateCateg, categories}) => {
     // }
 
   return (<div>
-            <select value={categ}  onChange={(e) => updateCateg(e.target.value) }>
+            <select value={categ}  onChange={(e) => updateCateg(e.target.value) } className="bg-gray-300 w-80 h-8 rounded-3xl text-center">
             <option>toutes categories</option>
         {
             categories.map((plant,index) =>(
@@ -22,8 +22,8 @@ const Categories = ({categ, updateCateg, categories}) => {
             ))
         }
     </select>
-    <button onClick={() => {updateCateg('')}}>Reinitialiser</button>
-    <span>{categ}</span>
+    {/* <button onClick={() => {updateCateg('')}}>Reinitialiser</button>
+    <span>{categ}</span> */}
   </div>
     
   )

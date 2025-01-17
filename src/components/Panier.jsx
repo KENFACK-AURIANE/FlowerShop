@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
-import '../styles/Cart.css'
+// import '../styles/Cart.css'
 
 const Panier = ({cart, updateCart}) => {
     const monsteaprice = 8
@@ -10,7 +10,7 @@ const Panier = ({cart, updateCart}) => {
       acc + plantType.amount * plantType.price,0
     )
     
-  return isOpen?(<div className="lmj-cart">
+  return isOpen?(<div className="bg-purple-200">
     <button className="lmj-cart-toggle-button"
       onClick={() => setIsOpen(false)}>fermer le panier </button>
       <button onClick={() => updateCart([])}>vider le pannier</button>

@@ -3,7 +3,7 @@ import { plantList } from '../datas/plantList'
 import PlantItem from './PlantItem'
 import '../styles/ShoppingList.css'
 
-function ShoppingList({cart, updateCart,categ, categories}) {
+function ShoppingList({cart, updateCart,categ}) {
 	// const categories = plantList.reduce(
 	// 	(acc, plant) =>
 	// 		acc.includes(plant.category) ? acc : acc.concat(plant.category),
@@ -29,33 +29,34 @@ function ShoppingList({cart, updateCart,categ, categories}) {
 	}
 
 	return categ === '' || categ ==='toutes categories'?(
-		<div>
-			<ul>
+		<div className='pl-7 pb-10'>
+			{/* <ul>
 				{categories.map((cat) => (
 					<li key={cat}>{cat}</li>
 				))}
-			</ul>
-			<ul className='lmj-plant-list'>
+			</ul> */}
+			<ul className='grid sm:grid-cols-3 gap-x-0 gap-y-10'>
 				{plantList.map(({ id, cover, name, water, light, price }) => (
-					<div key={id}>
-						<PlantItem key={id}
+					<div key={id} className='w-96 border-blue-900 border-2 '>
+						<PlantItem  key={id}
 							id={id}
 							cover={cover}
 							name={name}
 							water={water}
 							light={light}
+							price= {price}
 							
 						/>
-						 <button onClick={() => {addToCart(name, price)}}>Ajouter</button>
+						<button onClick={() => {addToCart(name, price)}}className='text-green-700'>Ajouter</button>
 					</div>
 					 
 				))}
 			</ul>
 		</div>
 	) : (
-		<ul className='lmj-plant-list'>
+		<ul className='grid grid-cols-3 gap-x-0 gap-y-10'>
 			{specificCategories.map(({ id, cover, name, water, light, price }) => (
-				<div key={id}>
+				<div key={id} className='w-96 border-blue-900 border-2 '>
 					<PlantItem key={id}
 						id={id}
 						cover={cover}

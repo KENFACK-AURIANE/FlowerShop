@@ -23,7 +23,7 @@ const CareScale = ( {careType, scaleValue} ) => {
     }
     
   return (
-    <div  onClick={quantite}>
+    <div  onClick={quantite} className=' p-1  flex'>
       {
         value.map((rangE) =>(
           scaleValue >= rangE? scareType:null

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import '../styles/Footer.css'
+// import '../styles/Footer.css'
 const Footer = () => {
     const [inputValue, setInputValue] = useState('')
     const Submit = (e) =>{
@@ -11,7 +11,7 @@ const Footer = () => {
         }
     }    
   return (
-    <footer className="lmj-footer">
+    <footer className="text-center">
       <div className="lmj-footer-elem">Pour les passionnés de plantes ♣☻</div>
       <div className="lmj-footer-elem">laissez nous un mail: ♣☻
       <input 
